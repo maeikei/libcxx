@@ -228,6 +228,14 @@ else()
     list(APPEND LIBCXX_CXX_FEATURE_FLAGS -DNDEBUG)
   endif()
 endif()
+
+
+list(APPEND LIBCXX_CXX_FEATURE_FLAGS 
+	-std=c++11 -fstrict-aliasing -Wall -Wextra -Wshadow -Wconversion 
+             -Wnewline-eof -Wpadded -Wmissing-prototypes -Wstrict-aliasing=2 
+             -Wstrict-overflow=4 
+)
+
 # Static library
 if (NOT LIBCXX_ENABLE_SHARED)
   list(APPEND LIBCXX_CXX_FEATURE_FLAGS -D_LIBCPP_BUILD_STATIC)
